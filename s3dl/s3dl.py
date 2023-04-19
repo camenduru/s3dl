@@ -49,7 +49,7 @@ class ProgressPercentage(object):
         with self._lock:
             uri = "s3://{}/{}".format(bucket, key)
             self._status[uri] = 'Downloading'
-            return functools.partial(self.update, uri)
+            return functools.partial(self.update, uri + '\n')
 
     def update(self, uri, bytes_amount):
         with self._lock:
