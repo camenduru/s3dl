@@ -11,6 +11,7 @@ import threading
 import boto3
 from boto3.s3 import transfer
 
+session = boto3.session.Session()
 s3_client = session.client(
     service_name='s3',
     aws_access_key_id='T4XRLNEZHXBKEUGPZBV4',
