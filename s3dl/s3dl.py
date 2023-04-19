@@ -76,7 +76,7 @@ class ProgressPercentage(object):
         percent = cls.percentage(seen, size)
         seen_str, size_str = cls.sizeof_fmt(seen, size)
         sys.stdout.write("\033[K")
-        sys.stdout.write("{} {} / {}  ({:.2f}%) {}\n".format(key,
+        sys.stdout.write("\r{} {} / {}  ({:.2f}%) {}".format(key,
                                                              seen_str,
                                                              size_str,
                                                              percent,
