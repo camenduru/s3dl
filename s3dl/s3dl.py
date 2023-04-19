@@ -11,17 +11,16 @@ import threading
 import boto3
 from boto3.s3 import transfer
 
-if os.environ.get('S3DL_DEFAULT_PROFILE', ''):
-    boto3.setup_default_session(profile_name=os.environ.get(
-            'S3DL_DEFAULT_PROFILE'))
-
-s3_client = boto3.client('s3')
-
+s3_client = session.client(
+    service_name='s3',
+    aws_access_key_id='T4XRLNEZHXBKEUGPZBV4',
+    aws_secret_access_key='lmOOW72z22TG7aTdbZkzLzpWEsR5hAUS7tXESPNz',
+    endpoint_url='https://s3.eu-central-2.wasabisys.com',
+)
 
 def signal_handler(signal, frame):
     print('\nExiting!')
     os._exit(0)
-
 
 class ProgressPercentage(object):
     def __init__(self):
